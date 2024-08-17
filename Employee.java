@@ -1,28 +1,28 @@
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public abstract class Employee {
     protected String id;
     protected String name;
-    protected Date birthday;
+    protected String birthday;
     protected String email;
     protected String phone;
-    protected int employeeType, employeeCount;
-    protected Certificate certificate;
+    protected int employeeType;
+    protected List<Certificate> certificates;
 
     public Employee() {
-
+        this.certificates = new ArrayList<>();
     }
 
-    public Employee(String id, String name, Date birthday, String email, String phone, int employeeType) {
-        if (!isInvalidName(name)) {}
+    public Employee(String id, String name, String birthday, String email, String phone, int employeeType) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
         this.email = email;
         this.phone = phone;
         this.employeeType = employeeType;
+
     }
 
     public String getId() {
@@ -37,11 +37,11 @@ public abstract class Employee {
         this.name = name;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
@@ -69,15 +69,33 @@ public abstract class Employee {
         this.employeeType = employeeType;
     }
 
-    public abstract void Nhap(Scanner sc) ;
+    public List<Certificate> getCertificates() {
+        return certificates;
+    }
+
+    public void setCertificates(List<Certificate> certificates) {
+        this.certificates = certificates;
+    }
+
+    public void addCertificate(Certificate certificate) {
+        certificates.add(certificate);
+    }
+
+    public abstract void enterID(Scanner sc);
+
+    public  abstract void enterName(Scanner sc);
+
+    public abstract void enterBirthday(Scanner sc);
+
+    public abstract void enterEmail(Scanner sc);
+
+    public abstract void enterPhone(Scanner sc);
+
+    public abstract void enterOther(Scanner sc);
+
+    public abstract void enterCertificate(Scanner sc);
 
     public abstract void Xuat(Scanner sc);
-
-    public static boolean isInvalidName(String name) {
-        String regex = "^[a-zA-Z\\s]+$";
-        return name != null && Pattern.matches(regex, name);
-    }//cái này chưa biết vết
-
 
 
 }

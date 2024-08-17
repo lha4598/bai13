@@ -1,13 +1,13 @@
-import java.util.Date;
-
 public class Certificate {
     private String certificateId;
     private String certificateName;
-    private Date certificateDate;
-    public Certificate(String certificateId, String certificateName, Date certificateDate) {
+    private String certificateDate;
+    private String certificateRank;
+    public Certificate(String certificateId, String certificateName, String certificateDate, String certificateRank) {
         this.certificateId = certificateId;
         this.certificateName = certificateName;
         this.certificateDate = certificateDate;
+        this.certificateRank = certificateRank;
     }
 
     public String getCertificateId() {
@@ -26,11 +26,28 @@ public class Certificate {
         this.certificateName = certificateName;
     }
 
-    public Date getCertificateDate() {
+    public String getCertificateDate() {
         return certificateDate;
     }
 
-    public void setCertificateDate(Date certificateDate) {
+    public void setCertificateDate(String certificateDate) {
         this.certificateDate = certificateDate;
+    }
+
+    public String getCertificateRank() {
+        return certificateRank;
+    }
+
+    public void setCertificateRank(String certificateRank) {
+        this.certificateRank = certificateRank;
+    }
+
+    public String toString() {
+        return "Certificate{" +
+                "certificateId='" + certificateId + '\'' +
+                ", certificateName='" + certificateName + '\'' +
+                ", certificateDate='" + certificateDate + '\'' +
+                ", certificateRank='" + certificateRank + '\'' +
+                '}';
     }
 }

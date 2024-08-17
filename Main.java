@@ -21,19 +21,37 @@ public class Main {
                     int choice2 = sc.nextInt();
                     sc.nextLine();
                     if (choice2 == 1) {
-                        Employee experience = new Experience();
-                        experience.Nhap(sc);
-                        manager.addEmployee(experience);
+                        Employee e = new Experience();
+                        e.enterID(sc);
+                        e.enterName(sc);
+                        e.enterBirthday(sc);
+                        e.enterEmail(sc);
+                        e.enterPhone(sc);
+                        e.enterOther(sc);
+                        e.enterCertificate(sc);
+                        manager.addEmployee(e);
                     }
                     if (choice2 == 2) {
-                        Employee fresher = new Fresher();
-                        fresher.Nhap(sc);
-                        manager.addEmployee(fresher);
+                        Employee f = new Fresher();
+                        f.enterID(sc);
+                        f.enterName(sc);
+                        f.enterBirthday(sc);
+                        f.enterEmail(sc);
+                        f.enterPhone(sc);
+                        f.enterOther(sc);
+                        f.enterCertificate(sc);
+                        manager.addEmployee(f);
                     }
                     if (choice2 == 3) {
-                        Employee intern = new Intern();
-                        intern.Nhap(sc);
-                        manager.addEmployee(intern);
+                        Employee i = new Intern();
+                        i.enterID(sc);
+                        i.enterName(sc);
+                        i.enterBirthday(sc);
+                        i.enterEmail(sc);
+                        i.enterPhone(sc);
+                        i.enterOther(sc);
+                        i.enterCertificate(sc);
+                        manager.addEmployee(i);
                     }
                     break;
                 }

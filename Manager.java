@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public class Manager {
     Scanner sc = new Scanner(System.in);
     private List<Employee> employees;
+    private static int count = 0;
 
     public Manager() {
         employees = new ArrayList<>();
@@ -13,6 +13,7 @@ public class Manager {
 
     public void addEmployee(Employee employee) {
         employees.add(employee); //Thêm
+        count++;
     }
 
     public void showEmployees() {
@@ -24,7 +25,8 @@ public class Manager {
     }
 
     public void updateEmployee(String id, Scanner sc) {
-        this.employees.stream().filter(employee -> employee.getId().equals(id)).findFirst().ifPresent(employee -> {employee.Nhap(sc);});
+        this.employees.stream().filter(employee -> employee.getId().equals(id)).findFirst().ifPresent(employee -> {employee.enterID(sc);
+            employee.enterName(sc);employee.enterBirthday(sc);employee.enterPhone(sc);employee.enterEmail(sc);employee.enterOther(sc);});
     }
 
 
